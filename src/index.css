@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-forest-950 text-forest-50 font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse at top, rgba(34, 86, 37, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(28, 69, 31, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-forest-900/60 backdrop-blur-xl border border-forest-700/50 rounded-2xl;
+  }
+  .glass-card-light {
+    @apply bg-forest-50/95 backdrop-blur-xl border border-forest-200 rounded-2xl;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-natural-500 text-white font-semibold transition-all duration-300 hover:bg-natural-400 hover:shadow-lg hover:shadow-natural-500/30 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-forest-800/80 text-forest-100 font-semibold border border-forest-600/50 transition-all duration-300 hover:bg-forest-700 hover:border-forest-500 hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-forest-200 font-medium transition-all duration-200 hover:bg-forest-800/50 hover:text-white;
+  }
+  .section-label {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-natural-500/10 border border-natural-500/30 text-natural-300 text-xs font-semibold uppercase tracking-wider;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(61, 135, 65, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(61, 135, 65, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
